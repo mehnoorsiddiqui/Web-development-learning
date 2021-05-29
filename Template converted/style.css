@@ -1,0 +1,120 @@
+.black{
+    background-color: black;
+}
+.oval {
+    height: 50px;
+    width: 100%;
+    background-color:#4f81bd;
+    border-radius: 30px;
+}
+nav{
+  height: 350px;
+}
+.bg-tea{
+      background-color: #d7d7b1;
+}
+.socialLinks,.brand{
+  text-align: center;
+}
+
+nav .socialLinks a {
+  display: inline-block;
+  font-size: 18px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 36px;
+  background-color: #ffffff;
+  color: #d7c07a;
+  margin: 0 3px 3px 0;
+  text-align: center;
+}
+nav .socialLinks a:hover{
+  text-decoration: none;
+  opacity: 0.5;
+}
+.bars div{
+  height: 4px;
+  background-color: white;
+  margin: 3px 0;
+  transition: 0.5s;
+}
+
+.bars{
+  width: 50px;
+  display: inline-block;
+}
+.one.active,.two.active,.three.active{
+  margin: 6px 0;
+}
+.one.active,.three.active{
+  height: 5px;
+}
+.navItems a{
+  text-decoration: none;
+  margin: 0 10px -5px 10px;
+}
+.navItems.active a:not(a.bars){
+  visibility: visible;
+  transition: all 0.5s ease-out;
+}
+.navItems a:not(a.bars){
+  visibility: hidden;
+  transition: all 0.2s ease-in;
+  
+}
+.navItems a:not(a.bars){
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 20px;
+}
+.navItems a:first-child{
+  color:#5f5e4e !important;
+}
+.navItems a:not(a.bars):hover{
+  color:#5f5e4e ;
+}
+.navItems{
+  text-align: center;
+  height: 40%;
+}
+/* .bars:hover div{
+  margin: 3px 0;
+} */
+  /*screen that are min 992px or greater*/
+  @media (min-width: 992px) {
+       .leftside >a {
+          float: inline-end;
+      }
+  }
+   /*screen that are max 992px or less*/
+  @media (max-width: 992px) {
+    .leftside >a>img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .brand a img{
+      width: 40%;
+    }
+
+  }
+@media(max-width:768px){
+  .navItems a.bars{
+    margin-right: 50%;
+    margin-left: 46% ;
+
+  }
+}
+@media(max-width:480px){
+  .navItems a.bars{
+    margin-right: 50%;
+    margin-left: 46% ;
+    width: 40px;
+
+  }
+  .navItems a{
+    margin: 0 5px -5px 5px;
+    font-size: small;
+  }
+}

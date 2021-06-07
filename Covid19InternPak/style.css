@@ -1,0 +1,88 @@
+.img-logo {
+    width: 65px;
+  }
+  .img-person {
+    margin-top: 100%;
+  }
+  .header h3 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 17px;
+  }
+  .header p {
+    font-size: 15px;
+  }
+  
+  .header .col-4 {
+    padding: 0px;
+  }
+  .header .col-8 {
+    padding-left: 0px;
+  }
+  .icon-round {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    display: block;
+  }
+ 
+  .list {
+    cursor: pointer;
+  }
+  .list-header h4 {
+    font-weight: bold;
+  }
+  .list h5 {
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  .list p {
+    font-size: 14px;
+  }
+  .img-arrow {
+    margin-top: 11px;
+  }
+  .row.list {
+    border-bottom: 1px solid #f0f0f0;
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .container {
+    padding: 0px;
+    width: 80%;
+    margin: 0 auto;
+    max-width: 420px;
+  }
+  .item-list li {
+    font-size: 14px;
+    margin-bottom: 22px;
+    line-height: 18px;
+  }
+  .mt-neg{
+      margin-top: -100px;
+  }
+  .container a{
+      color:#35393d;
+  }
+  .container a:hover{
+    text-decoration: none;
+    color:#35393d;
+  }
+  ol li {
+    margin-bottom: 2px;
+  }
+  ol {
+    padding-left: 20px;
+    font-size: 18px;
+    margin-top: 22px;
+  } 
+  .closeBtn{
+      color: gray !important;
+      float: right;
+      font-size: 20px !important;
+  }
+  .img-fever{
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }

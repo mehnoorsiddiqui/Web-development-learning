@@ -118,10 +118,111 @@ Person.prototype.getsMaried = function(newLastName){
 const john=new Person('John','Doe','August 12 1990');
 const mary=new Person('Mary','Johnson ','March 20 1978');
 
-console.log(mary);
-console.log(john.calAge());
-console.log(mary.getFullName());
-mary.getsMaried('Doe');
-console.log(mary.getFullName());
+// console.log(mary);
+// console.log(john.calAge());
+// console.log(mary.getFullName());
+// mary.getsMaried('Doe');
+// console.log(mary.getFullName());
 
-console.log(mary.hasOwnProperty('firstName'));
+// console.log(mary.hasOwnProperty('firstName'));
+
+//Prototypal Inheritance
+
+function Person(firstName,lastName){
+    this.firstName = firstName;
+    this.lastName = lastName;
+}
+
+//Greeting
+Person.prototype.greeting = function(){
+    return `Hello there ${this.firstName} ${this.lastName}`;
+}
+
+const personObj= new Person('Jhon', 'Doe');
+console.log(personObj.greeting());
+
+
+//Customer constructor
+function Customer(firstName,lastName,phone,membership){
+    //inheritance of person class
+    Person.call(this,firstName,lastName);
+    this.phone = phone;
+    this.membership = membership;
+}
+//Inherit the person prototype method
+Customer.prototype = Object.create(Person.prototype);
+
+//Make customer.prototype return Customer()
+Customer.prototype.constructor = Customer;
+
+//Create customer
+const customer1 = new Customer('Tom','Smith','555-555-555','Standard');
+
+Customer.prototype.greeting =function(){
+    return `Hello there ${this.firstName} ${this.lastName} welcome to our company`;
+}
+console.log(customer1.greeting());
+
+
+
+//Using Object.create
+
+const perosnPrototypes = {
+    greeting: function(){
+        return`Hello there ${this.firstName} ${this.lastName} welcome to our company`;
+    },
+    getsMarried: function(newLastName){
+        this.lastName = newLastName;
+    }
+}
+
+const maria= Object.create(perosnPrototypes);
+maria.firstName='Mary';
+maria.lastName='Williams';
+maria.age = 30;
+
+maria.getsMarried('Thomson');
+console.log(maria.greeting());
+
+const brads = Object.create(perosnPrototypes,{
+    firstName: {value: 'Brad'},
+    lastName: {value: 'Traversy'},
+    age:{value:36}
+});
+console.log(brads);
+console.log(brads.greeting());
+
+//ES6 
+
+
+class Persons{
+    constructor(firstName,lastName,dob){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.birthday = new Date(dob);
+    }
+
+    greeting(){
+        return`Hello there ${this.firstName} ${this.lastName} welcome to our company`;
+    }
+    calculateAge(){
+        const diff = Date.now()-this.birthday.getTime();
+        const ageDate = new Date (diff);
+        return Math.abs(ageDate.getUTCFullYear()-1970);
+    }
+    getsMaried(newLastName){
+        this.lastName =newLastName;
+    }
+
+    //static method gets instantiated without creating objects
+
+    static addNumbers(x,y){
+        return x + y;
+    }
+}
+const mario = new Persons('Mary','Williams','2015-03-25');
+
+mario.getsMaried('Thompson');
+console.log(mario.greeting());
+console.log(mario.calculateAge());
+console.log(Persons.addNumbers(1,20));
